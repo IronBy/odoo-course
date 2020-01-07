@@ -44,8 +44,8 @@
     </field>
   </record>
 
-  <menuitem action="dietfacts_product_template_action" id="menu_dietfacts_product_template_action" parent="sale.product_menu_catalog" sequence="2" active="False"/>
-  <record id="sale.menu_dietfacts_product_template_action" model="ir.ui.menu">
+  <menuitem action="dietfacts_product_template_action" id="menu_dietfacts_product_template_action" parent="sale.product_menu_catalog" sequence="2" active="True"/>
+  <!-- <record id="menu_dietfacts_product_template_action" model="ir.ui.menu">
     <field name="active" eval="True"/>
-  </record>
+  </record> -->
 </odoo>
