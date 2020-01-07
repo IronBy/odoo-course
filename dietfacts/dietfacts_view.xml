@@ -48,7 +48,7 @@
   <record id="menu_dietfacts_product_template_action" model="ir.ui.menu">
     <field name="active" eval="True"/>
   </record>
-  <record id="sale.menu_product" model="ir.ui.menu">
+  <record id="sale.menu_products" model="ir.ui.menu">
     <field name="sequence">3</field>
   </record>
 </odoo>
