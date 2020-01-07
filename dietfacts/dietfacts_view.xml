@@ -8,6 +8,7 @@
         <field name="calories"/>
         <field name="servingsize"/>
         <field name="lastupdated"/>
+        <field name="dietitem"/>
       </field>
     </field>
   </record>
@@ -20,6 +21,7 @@
         <field name="calories"/>
         <field name="servingsize"/>
         <field name="lastupdated"/>
+        <field name="dietitem"/>
       </field>
     </field>
   </record>
