@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-    <record id="dietfacts_product_template_tree_view" model="ir.ui.view">
-      <field name="inherit_id" ref="product.product_template_tree_view" />
-      <field name="model">product.template</field>
-      <field name="arch" type="xml">
-        <field name="name" position="after">
-          <field name="calories"/>
-          <field name="servingsize"/>
-          <field name="lastupdated"/>
-        </field>
+  <record id="dietfacts_product_template_tree_view" model="ir.ui.view">
+    <field name="inherit_id" ref="product.product_template_tree_view" />
+    <field name="model">product.template</field>
+    <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="calories"/>
+        <field name="servingsize"/>
+        <field name="lastupdated"/>
       </field>
-    </record>
+    </field>
+  </record>
 
-    <record id="dietfacts_product_template_only_form_view" model="ir.ui.view">
-      <field name="inherit_id" ref="product.product_template_only_form_view" />
-      <field name="model">product.template</field>
-      <field name="arch" type="xml">
-        <field name="barcode" position="after">
-          <field name="calories"/>
-          <field name="servingsize"/>
-          <field name="lastupdated"/>
-        </field>
+  <record id="dietfacts_product_template_only_form_view" model="ir.ui.view">
+    <field name="inherit_id" ref="product.product_template_only_form_view" />
+    <field name="model">product.template</field>
+    <field name="arch" type="xml">
+      <field name="barcode" position="after">
+        <field name="calories"/>
+        <field name="servingsize"/>
+        <field name="lastupdated"/>
       </field>
-    </record>
-  </data>
+    </field>
+  </record>
 
   <record id="dietfacts_product_template_action" model="ir.actions.act_window">
     <field name="name">Products (Dietfacts)</field>
