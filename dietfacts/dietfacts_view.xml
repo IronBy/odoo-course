@@ -52,4 +52,9 @@
   <record id="sale.menu_products" model="ir.ui.menu">
     <field name="sequence">3</field>
   </record>
+
+  <record id="product_category_diet_items" model="product.category">
+    <field name="parent_id" ref="product.product_category_all"/>
+    <field name="name">Diet Items</field>
+  </record>
 </odoo>
