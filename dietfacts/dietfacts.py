@@ -15,5 +15,5 @@ class Dietfacts_res_users_meal(models.Model):
   name = fields.Char("Meal Name")
   meal_date = fields.Datetime("Meal Date")
   # item_ids = fields.One2many()
-  user_id = felds.Many2one("res.users", "Meal User")
+  user_id = fields.Many2one("res.users", "Meal User")
   notes = fields.Text("Meal Notes")
