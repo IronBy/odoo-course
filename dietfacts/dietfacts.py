@@ -12,6 +12,7 @@ class Dietfacts_product_template(models.Model):
 
 class Dietfacts_res_users_meal(models.Model):
   _name = 'res.users.meal'
+  _description = 'Expiriments with Menu items model'
   name = fields.Char("Meal Name")
   meal_date = fields.Datetime("Meal Date")
   # item_ids = fields.One2many()
