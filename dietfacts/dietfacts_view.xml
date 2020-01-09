@@ -55,4 +55,23 @@
     <field name="parent_id" ref="product.product_category_all"/>
     <field name="name">Diet Items</field>
   </record>
+
+  <!-- Meal items -->
+
+  <record id="meal_action_dietfacts" model="ir.actions.act_window">
+    <field name="name">Meals</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.users.meal</field>
+    <field name="view_mode">tree,kanban,form</field>
+    <field name="view_type">form</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create a new Meal
+        </p><p>
+            You must define a Meal items
+        </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_meal_action_dietfacts" action="meal_action_dietfacts"parent="sale.product_menu_catalog" sequence="15" />
 </odoo>
