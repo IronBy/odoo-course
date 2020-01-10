@@ -78,10 +78,13 @@
     <field name="model">res.users.meal</field>
     <field name="arch" type="xml">
       <form>
-        <field name="name"/>
-        <field name="meal_date"/>
-        <field name="user_id"/>
-        <field name="notes"/>
+        <group>
+          <field name="name"/>
+          <field name="meal_date"/>
+          <field name="user_id"/>
+          <field name="notes"/>
+          <field name="item_ids"/>
+        </group>
       </form>
     </field>
   </record>
