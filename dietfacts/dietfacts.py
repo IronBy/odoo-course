@@ -26,3 +26,4 @@ class Dietfacts_res_users_mealitem(models.Model):
   item_id = fields.Many2one('product.template')
   servings = fields.Float('Servings')
   notes = fields.Text('Meal item notes')
+  caloris = fields.Integer(related='item_id.calories', string='Calories per serving', store=True, readonly=True)
