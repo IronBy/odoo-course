@@ -19,7 +19,7 @@ class Dietfacts_res_users_meal(models.Model):
   user_id = fields.Many2one("res.users", "Meal User")
   notes = fields.Text("Meal Notes")
 
-class Dietfacts_res_users_mealitem():
+class Dietfacts_res_users_mealitem(models.Model):
   _name = 'res.users.mealitem'
   _description = 'Meal item'
   meal_id = fields.Many2one('res.users.meal', "Meal")
