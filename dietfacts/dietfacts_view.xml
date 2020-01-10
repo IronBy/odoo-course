@@ -83,8 +83,18 @@
           <field name="meal_date"/>
           <field name="user_id"/>
           <field name="notes"/>
-          <field name="item_ids"/>
         </group>
+        <notebook>
+          <page name="mealitems" string="Meal Items">
+            <field name="item_ids" widget="one2many_list">
+              <tree string="Menu Items" editable="bottom">
+                <field name="item_id"/>
+                <field name="servings"/>
+                <field name="notes"/>
+              </tree>
+            </field>
+          </page>
+        </notebook>
       </form>
     </field>
   </record>
