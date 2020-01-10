@@ -20,7 +20,7 @@ class Dietfacts_res_users_meal(models.Model):
   notes = fields.Text("Meal Notes")
   totalcalories = fields.Integer(string='Total Meal Calories', store=True, compute='_calccalories')
 
-  @api.depends('item_ids', 'item_ids.servings')
+  @api.depends('item_ids', 'item_ids.servings', 'item_ids.calories')
   def _calccalories(self):
     calories = 0
     for item in self.item_ids:
