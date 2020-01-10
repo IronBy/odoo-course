@@ -1,3 +1,5 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_res_users_meal_for_base_user,"Access for base user",model_res_users_meal,base.group_user,1,0,0,0
-access_res_users_meal_for_sale_manager,"Access Meal Items",model_res_users_meal,sales_team.group_sale_manager,1,1,1,1
+access_res_users_meal_for_base_user,"Meal Access for base user",model_res_users_meal,base.group_user,1,0,0,0
+access_res_users_meal_for_sale_manager,"Meal Access Meal Items",model_res_users_meal,sales_team.group_sale_manager,1,1,1,1
+access_res_users_mealitem_for_base_user,"Meal Item Access for base user",res.users.mealitem,base.group_user,1,0,0,0
+access_res_users_mealitem_for_sale_manager,"Meal Item Access Meal Items",res.users.mealitem,sales_team.group_sale_manager,1,1,1,1

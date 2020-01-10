@@ -12,9 +12,17 @@ class Dietfacts_product_template(models.Model):
 
 class Dietfacts_res_users_meal(models.Model):
   _name = 'res.users.meal'
-  _description = 'Expiriments with Menu items model'
+  _description = 'Expiriments with Meal Menu model'
   name = fields.Char("Meal Name")
   meal_date = fields.Datetime("Meal Date")
-  # item_ids = fields.One2many()
+  item_ids = fields.One2many('res.users.mealitem', 'meal_id')
   user_id = fields.Many2one("res.users", "Meal User")
   notes = fields.Text("Meal Notes")
+
+class Dietfacts_res_users_mealitem():
+  _name = 'res.users.mealitem'
+  _description = 'Meal item'
+  meal_id = fields.Many2one('res.users.meal', "Meal")
+  item_id = fields.Many2one('product.template')
+  servings = fields.Float('Servings')
+  notes = fields.Text('Meal item notes')
