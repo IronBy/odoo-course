@@ -82,6 +82,7 @@
           <field name="name"/>
           <field name="meal_date"/>
           <field name="user_id"/>
+          <field name="totalcalories"/>
           <field name="notes"/>
         </group>
         <notebook>
