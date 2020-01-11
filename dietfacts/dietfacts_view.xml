@@ -100,4 +100,17 @@
       </form>
     </field>
   </record>
+
+  <record id="dietfacts_meal_tree_view" model="ir.ui.view">
+    <field name="model">res.users.meal</field>
+    <field name="view_mode">tree</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="meal_date"/>
+        <field name="user_id"/>
+        <field name="totalcalories"/>
+      </field>
+    </tree>
+  </record>
 </odoo>
