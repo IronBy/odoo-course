@@ -1,28 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-  <data>
-    <record id="dietfacts_product_template_tree_view" model="ir.ui.view">
-      <field name="inherit_id" ref="product.product_template_tree_view" />
-      <field name="model">product.template</field>
-      <field name="arch" type="xml">
-        <field name="name" position="after">
-          <field name="calories"/>
-          <field name="servingsize"/>
-          <field name="lastupdated"/>
-        </field>
+<odoo>
+  <record id="dietfacts_product_template_tree_view" model="ir.ui.view">
+    <field name="inherit_id" ref="product.product_template_tree_view" />
+    <field name="model">product.template</field>
+    <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="calories"/>
+        <field name="servingsize"/>
+        <field name="lastupdated"/>
       </field>
-    </record>
+    </field>
+  </record>
 
-    <record id="dietfacts_product_template_only_form_view" model="ir.ui.view">
-      <field name="inherit_id" ref="product.product_template_only_form_view" />
-      <field name="model">product.template</field>
-      <field name="arch" type="xml">
-        <field name="barcode" position="after">
-          <field name="calories"/>
-          <field name="servingsize"/>
-          <field name="lastupdated"/>
-        </field>
+  <record id="dietfacts_product_template_only_form_view" model="ir.ui.view">
+    <field name="inherit_id" ref="product.product_template_only_form_view" />
+    <field name="model">product.template</field>
+    <field name="arch" type="xml">
+      <field name="barcode" position="after">
+        <field name="calories"/>
+        <field name="servingsize"/>
+        <field name="lastupdated"/>
       </field>
-    </record>
-  </data>
-</openerp>
+    </field>
+  </record>
+
+  <record id="dietfacts_product_template_action" model="ir.actions.act_window">
+    <field name="name">Products (Dietfacts)</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.template</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="dietfacts_product_template_tree_view"/>
+    <field name="search_view_id" ref="product.product_template_search_view"/>
+    <field name="context">{"search_default_filter_to_sell":1}</field>
+    <field name="domain">[('categ_id.name','=','Diet Items')]</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create a new product (Dietfacts)
+        </p><p>
+            You must define a product (Dietfacts) for everything you sell or purchase,
+            whether it's a storable product, a consumable or a service.
+        </p>
+    </field>
+  </record>
+
+  <menuitem action="dietfacts_product_template_action" id="menu_dietfacts_product_template_action" parent="sale.product_menu_catalog" sequence="2" active="False"/>
+  <record id="menu_dietfacts_product_template_action" model="ir.ui.menu">
+    <field name="active" eval="True"/>
+  </record>
+  <record id="sale.menu_products" model="ir.ui.menu">
+    <field name="sequence">3</field>
+  </record>
+
+  <record id="product_category_diet_items" model="product.category">
+    <field name="parent_id" ref="product.product_category_all"/>
+    <field name="name">Diet Items</field>
+  </record>
+
+  <!-- Meal -->
+
+  <record id="meal_action_dietfacts" model="ir.actions.act_window">
+    <field name="name">Meals</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.users.meal</field>
+    <field name="view_mode">tree,kanban,form</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create a new Meal
+        </p><p>
+            You must define a Meal items
+        </p>
+    </field>
+  </record>
+
+  <menuitem id="menu_meal_action_dietfacts" action="meal_action_dietfacts" parent="sale.product_menu_catalog" sequence="15" active="True" />
+
+  <record id="dietfacts_meal_form_view" model="ir.ui.view">
+    <field name="model">res.users.meal</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <field name="name"/>
+          <field name="meal_date"/>
+          <field name="user_id"/>
+          <field name="totalcalories"/>
+          <field name="notes"/>
+        </group>
+        <notebook>
+          <page name="mealitems" string="Meal Items">
+            <field name="item_ids" widget="one2many_list">
+              <tree string="Menu Items" editable="bottom">
+                <field name="item_id"/>
+                <field name="calories"/>
+                <field name="servings"/>
+                <field name="notes"/>
+              </tree>
+            </field>
+          </page>
+        </notebook>
+      </form>
+    </field>
+  </record>
+
+  <record id="dietfacts_meal_tree_view" model="ir.ui.view">
+    <field name="model">res.users.meal</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="meal_date"/>
+        <field name="user_id"/>
+        <field name="totalcalories" sum="Total Calories"/>
+      </tree>
+    </field>
+  </record>
+</odoo>
