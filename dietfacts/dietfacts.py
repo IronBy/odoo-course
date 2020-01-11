@@ -38,7 +38,7 @@ class Dietfacts_res_users_mealitem(models.Model):
 
 # Nutrients
 
-class Dietfacts_product_nutrient(mddels.Model):
+class Dietfacts_product_nutrient(models.Model):
   _name = 'product.nutrient'
   _description = 'Nutrient'
   name = fields.Char('Nutrient Name')
