@@ -3,3 +3,7 @@ access_res_users_meal_for_base_user,"Meal Access for base user",model_res_users_
 access_res_users_meal_for_sale_manager,"Meal Access Meal Items",model_res_users_meal,sales_team.group_sale_manager,1,1,1,1
 access_res_users_mealitem_for_base_user,"Meal Item Access for base user",model_res_users_mealitem,base.group_user,1,0,0,0
 access_res_users_mealitem_for_sale_manager,"Meal Item Access Meal Items",model_res_users_mealitem,sales_team.group_sale_manager,1,1,1,1
+access_model_product_nutrient_for_base_user,"Nutrient Access for base user",model_product_nutrient,base.group_user,1,0,0,0
+access_model_product_nutrient_for_sale_manager,"Nutrient Access Meal Items",model_product_nutrient,sales_team.group_sale_manager,1,1,1,1
+access_model_product_template_nutrient_for_base_user,"Nutrient in Product Access for base user",model_product_template_nutrient,base.group_user,1,0,0,0
+access_model_product_template_nutrient_for_sale_manager,"Nutrient in Product Access Meal Items",model_product_template_nutrient,sales_team.group_sale_manager,1,1,1,1
