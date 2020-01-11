@@ -24,7 +24,7 @@ class Dietfacts_res_users_meal(models.Model):
   def _calccalories(self):
     calories = 0
     for item in self.item_ids:
-      calories += item.item_id.calories
+      calories += item.calories * item.servings
     self.totalcalories = calories
 
 class Dietfacts_res_users_mealitem(models.Model):
