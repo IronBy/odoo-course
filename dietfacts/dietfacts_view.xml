@@ -27,6 +27,7 @@
             <tree string="Nutrients" editable="bottom">
               <field name="nutrient_id"/>
               <field name="value"/>
+              <field name="uom"/>
               <field name="dailypercent"/>
             </tree>
           </field>

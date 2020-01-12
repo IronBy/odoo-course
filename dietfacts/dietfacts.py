@@ -53,3 +53,4 @@ class Dietfacts_product_template_nutrient(models.Model):
   product_id = fields.Many2one('product.template')
   value = fields.Float('Nutrient Value')
   dailypercent = fields.Float('Daily Recommended Value')
+  uom = fields.Char(related='nutrient_id.uom_id.name', string='Unit of Measure', store=False, readonly=True)
