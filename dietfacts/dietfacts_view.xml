@@ -21,6 +21,18 @@
         <field name="servingsize"/>
         <field name="lastupdated"/>
       </field>
+      <xpath expr="//page[@name='inventory']" position="after">
+        <page name="nutrition" string="Nutrition">
+          <field name="nutrient_ids" widget="one2many_list">
+            <tree string="Nutrients" editable="bottom">
+              <field name="nutrient_id"/>
+              <field name="value"/>
+              <field name="uom"/>
+              <field name="dailypercent"/>
+            </tree>
+          </field>
+        </page>
+      </xpath>
     </field>
   </record>
 
@@ -83,6 +95,7 @@
           <field name="meal_date"/>
           <field name="user_id"/>
           <field name="totalcalories"/>
+          <field name="largemeal"/>
           <field name="notes"/>
         </group>
         <notebook>
@@ -112,4 +125,20 @@
       </tree>
     </field>
   </record>
+
+  <!-- Nutrients -->
+
+  <record id="dietfacts_nutrients_tree_action" model="ir.actions.act_window">
+    <field name="name">Nutrients</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.nutrient</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p>
+        Provide a list of known nutrients
+      </p>
+    </field>
+  </record>
+
+  <menuitem action="dietfacts_nutrients_tree_action" id="menu_dietfacts_nutrients" parent="sale.product_menu_catalog" sequence="5" active="True"/>
 </odoo>
