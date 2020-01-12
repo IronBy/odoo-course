@@ -20,6 +20,7 @@ class Dietfacts_res_users_meal(models.Model):
   user_id = fields.Many2one("res.users", "Meal User")
   notes = fields.Text("Meal Notes")
   totalcalories = fields.Integer(string='Total Meal Calories', store=True, compute='_calccalories')
+  largemeal = feilds.Boolean('Large Meal')
 
   @api.depends('item_ids', 'item_ids.servings', 'item_ids.calories')
   def _calccalories(self):
@@ -27,6 +28,10 @@ class Dietfacts_res_users_meal(models.Model):
     for item in self.item_ids:
       calories += item.calories * item.servings
     self.totalcalories = calories
+
+  @api.onchange('totalcalories')
+  def check_totalcalories(self):
+    self.largemeal = self.totalcalories > 500
 
 class Dietfacts_res_users_mealitem(models.Model):
   _name = 'res.users.mealitem'
