@@ -21,6 +21,17 @@
         <field name="servingsize"/>
         <field name="lastupdated"/>
       </field>
+      <xpath expr="//page[@name='inventory']" position="after">
+        <page name="nutrition" string="Nutrition">
+          <field name="nutrient_ids" widget="one2many_list">
+            <tree string="Nutrients" editable="bottom">
+              <field name="nutrient_id"/>
+              <field name="value"/>
+              <field name="dailypercent"/>
+            </tree>
+          </field>
+        </page>
+      </xpath>
     </field>
   </record>
 

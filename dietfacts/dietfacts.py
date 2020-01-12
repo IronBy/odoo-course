@@ -9,6 +9,7 @@ class Dietfacts_product_template(models.Model):
   calories = fields.Integer("Calories")
   servingsize = fields.Float("Serving Size")
   lastupdated = fields.Date("Last Updated")
+  nutrient_ids = fields.One2many('product.template.nutrient', 'product_id')
 
 class Dietfacts_res_users_meal(models.Model):
   _name = 'res.users.meal'
