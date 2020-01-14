@@ -142,8 +142,8 @@
 
   <menuitem action="dietfacts_nutrients_tree_action" id="menu_dietfacts_nutrients" parent="sale.product_menu_catalog" sequence="5" active="True"/>
 
-  <tempalte id="product.nutrition">
-    <t t-call="report.html.container">
+  <template id="product.nutrition">
+    <t t-call="web.html_container">
       <t t-foreach="docs" t-as="o">
         <t t-call="report.external_layout">
           <div class="page">
@@ -154,7 +154,7 @@
         </t>
       </t>
     </t>
-  </tempalte>
+  </template>
 
   <report
     id="dietfacts_product_report"
