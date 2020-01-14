@@ -142,7 +142,7 @@
 
   <menuitem action="dietfacts_nutrients_tree_action" id="menu_dietfacts_nutrients" parent="sale.product_menu_catalog" sequence="5" active="True"/>
 
-  <template id="product.nutrition">
+  <template id="product_nutrition">
     <t t-call="web.html_container">
       <t t-foreach="docs" t-as="o">
         <t t-call="report.external_layout">
@@ -161,7 +161,7 @@
     model="product.template"
     string="Nutrition Products"
     report_type="qweb-pdf"
-    name="product.nutrition"
+    name="product_nutrition"
     file="product.nutrition"
   />
 </odoo>
