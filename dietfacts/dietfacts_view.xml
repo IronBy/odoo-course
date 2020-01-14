@@ -150,6 +150,7 @@
             <div class="oe-structure" />
             <h1>Nutrition Report</h1>
             <h2>Product Name: <span t-field="o.name" /></h2>
+            <p>Calories: <span t-field="o.calories" /></p>
           </div>
         </t>
       </t>
