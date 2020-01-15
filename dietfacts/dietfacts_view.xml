@@ -154,7 +154,17 @@
 
             <h3>Nutrition Details</h3>
             <t t-foreach="o.nutrient_ids" t-as="itm">
-              <span t-field="item.nutrient_id.name" />
+              <div class="row">
+                <div class="col-6">
+                  <span t-field="itm.nutrient_id.name" />
+                </div>
+                <div class="col-2">
+                  <span t-field="itm.value" />
+                </div>
+                <div class="col-4">
+                  <span t-field="itm.uom" />
+                </div>
+              </div>
             </t>
           </div>
         </t>
